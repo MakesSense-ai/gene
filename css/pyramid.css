@@ -1,0 +1,88 @@
+/* css/pyramid.css */
+.leadership-pyramid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 450px; /* Increased max-width for better desktop view */
+    margin: 2rem auto;
+    position: relative; /* For ravine positioning */
+}
+
+.pyramid-level {
+    width: 100%;
+    padding: 12px 15px; /* Adjusted padding */
+    margin-bottom: 4px; /* Space between levels */
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem; /* Base font size */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+    position: relative; /* For pseudo-elements if needed */
+}
+
+/* Define widths for pyramid shape - mobile first */
+.level-anti    { width: 100%; background-color: var(--level-color, #dc3545); font-size: 0.9rem; }
+.level-transactional { width: 85%; background-color: var(--level-color, #fd7e14); font-size: 0.95rem; }
+.level-strategic { width: 70%; background-color: var(--level-color, #ffc107); color: #333; font-size: 1rem; }
+.level-exceptional { width: 55%; background-color: var(--level-color, #84d078); color: #333; font-size: 1.05rem; }
+.level-compound  { width: 40%; background-color: var(--level-color, #28a745); font-size: 1.1rem; }
+
+.pyramid-level.highlighted {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--level-color, #ccc), 0 0 25px var(--level-color, #ccc);
+    border: 2px solid #fff;
+    z-index: 10;
+}
+
+.level-name {
+    display: block;
+}
+
+.leadership-ravine-results {
+    width: 78%; /* Between strategic and exceptional */
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    padding: 8px 0;
+    margin: 2px 0; /* Position it between levels */
+    border: 2px dashed #ccc;
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    order: -1; /* Visually place it correctly if flex order changes */
+    /* This will be placed between Strategic and Exceptional. 
+       The order in PHP for pyramid_levels is top to bottom (e,d,c,b,a).
+       The ravine is between c (Strategic) and d (Exceptional).
+       So, it should appear after level-exceptional in the flex flow if we reverse the order for display or adjust manually.
+       For now, the PHP code iterates e,d,c,b,a. The ravine div is separate.
+       Let's adjust the PHP to insert it correctly or use absolute positioning for the ravine.
+       Given the current PHP, it's rendered after all levels. This CSS won't place it in the middle.
+       The PHP in results.php has been updated to render the ravine div *after* all levels.
+       To place it visually in the middle, we'd need to adjust the HTML structure or use more complex CSS.
+       For simplicity, the current PHP places it after the loop. I'll adjust the pyramid.css to make it look like it's in the middle using margins or absolute positioning if needed, but the current structure is simpler.
+       The current results.php has the ravine div *after* the loop. This is fine, we can style it to appear as a label.
+       Let's ensure the pyramid.css makes the ravine distinct.
+    */
+}
+
+/* Desktop adjustments for pyramid widths if needed */
+@media (min-width: 768px) {
+    .pyramid-level {
+        padding: 15px 20px;
+        font-size: 1.1rem;
+    }
+    .level-anti    { font-size: 1rem; }
+    .level-transactional { font-size: 1.05rem; }
+    .level-strategic { font-size: 1.1rem; }
+    .level-exceptional { font-size: 1.15rem; }
+    .level-compound  { font-size: 1.2rem; }
+
+    .leadership-ravine-results {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+}
+

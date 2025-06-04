@@ -1,0 +1,145 @@
+/* Custom Styles for Leadership Assessment - Inspired by call.coreelevation.com */
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    background-color: #f8f9fa; /* Light grey background for contrast with white sections */
+    line-height: 1.6;
+}
+
+header img {
+    max-height: 60px; /* Adjusted from 70px for a slightly sleeker look */
+}
+
+#landing-page h1 {
+    color: #003366; /* Deep blue for main headings */
+    margin-bottom: 0.75em;
+}
+
+#landing-page .lead {
+    color: #555;
+    margin-bottom: 1.5em;
+}
+
+.btn-primary {
+    background-color: #0056b3; /* A slightly more vibrant blue for primary CTAs */
+    border-color: #0056b3;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #004085; /* Darker blue on hover */
+    border-color: #00376e;
+}
+
+.btn-outline-primary {
+    border-color: #0056b3;
+    color: #0056b3;
+    padding: 1rem 1.5rem; /* Larger padding for answer buttons */
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+    background-color: #0056b3;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 86, 179, 0.3);
+}
+
+#assessment-question-container h2, .results-page h2 {
+    color: #003366;
+}
+
+#assessment-question-container .lead, .results-page .lead {
+    color: #444;
+}
+
+/* Styling for question sections */
+#main-content section {
+    background-color: #fff; /* White background for content sections */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+#landing-page {
+    background-color: transparent; /* Landing page hero doesn't need a white box */
+    box-shadow: none;
+}
+
+footer {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #landing-page h1 {
+        font-size: 2.5rem;
+    }
+    .btn-lg {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+    .btn-outline-primary {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    #main-content section {
+        padding: 1.5rem;
+    }
+}
+
+/* Progress Bar (Conceptual - if added with JS) */
+.progress-bar-container {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+    margin-bottom: 1.5rem;
+}
+
+.progress-bar-fill {
+    height: 10px;
+    background-color: #007bff; /* Bootstrap primary blue */
+    border-radius: .25rem;
+    text-align: center;
+    line-height: 10px;
+    color: white;
+    width: 0%; /* Will be updated by JS */
+    transition: width 0.4s ease;
+}
+
+/* Styling for results page elements (anticipating results.php) */
+.results-pyramid {
+    /* Placeholder for pyramid styling - likely SVG or complex CSS */
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    /* background-color: #eee; 
+    height: 300px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border: 1px dashed #ccc; */
+}
+
+.sales-letter-section {
+    background-color: #eef2f5; /* Light background for sales letter section for differentiation */
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.sales-letter-section img.gene-photo {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* Ensure button text is readable */
+.btn {
+    text-shadow: none; /* Remove any default text shadows that might reduce contrast */
+}
+
